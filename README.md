@@ -45,15 +45,16 @@ The notebook expects **two CSV files**:
 ## Repository Structure
 
 ```
-├── FBMFOR_Chemometrics_Analysis.ipynb   # Main analysis notebook
-├── index.qmd                            # Quarto landing page (→ GitHub Pages)
-├── _quarto.yml                          # Quarto project configuration
-├── styles.css                           # Custom styling for the site
+├── noebooks
+│   └── FBMFOR_Chemometrics_Analysis.ipynb   # Main analysis notebook
+├── index.qmd                                # Quarto landing page (→ GitHub Pages)
+├── _quarto.yml                              # Quarto project configuration
+├── styles.css                               # Custom styling for the site
 ├── .github/
 │   └── workflows/
-│       └── publish.yml                  # GitHub Actions workflow for Pages
-├── .nojekyll                            # Bypass Jekyll on GitHub Pages
-└── README.md                            # This file
+│       └── publish.yml                      # GitHub Actions workflow for Pages
+├── .nojekyll                                # Bypass Jekyll on GitHub Pages
+└── README.md                                # This file
 ```
 
 ## GitHub Pages Site
