@@ -67,8 +67,6 @@ The documentation site is built with [Quarto](https://quarto.org) and deployed a
 2. Go to **Settings → Pages → Source** and select **GitHub Actions**
 3. The site will build and deploy automatically on each push to `main`
 
-> **Note:** Replace `YOURUSERNAME` with your GitHub username and `FBMFOR-chemometrics` with your repository name in the badge URLs above and in `_quarto.yml`.
-
 ## Dependencies
 
 All dependencies are available in Google Colab by default:
