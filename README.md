@@ -1,7 +1,7 @@
 # FBMFOR — Chemometric Analysis for Food Fraud Detection
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ggkuhnle/FBMFOR-chemometrics/blob/main/FBMFOR_Chemometrics_Analysis.ipynb)
-[![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ggkuhnle.github.io/FBMFOR-chemometrics/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/FBMFOR_Chemometrics_Analysis.ipynb)
+[![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ggkuhnle.github.io/fbmfor-chemometrics/)
 
 Interactive chemometric analysis notebook for the **MSc Food Technology and Quality Assurance** module on food fraud analysis at the University of Reading.
 
@@ -20,7 +20,7 @@ Preprocessing options include baseline correction (ALS), normalisation (SNV, are
 
 ## Quick Start
 
-1. Click the **Open in Colab** badge above (or [this link](https://colab.research.google.com/github/YOURUSERNAME/FBMFOR-chemometrics/blob/main/FBMFOR_Chemometrics_Analysis.ipynb))
+1. Click the **Open in Colab** badge above (or [this link](https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/FBMFOR_Chemometrics_Analysis.ipynb))
 2. Run the cells sequentially — the demo dataset (simulated olive oil FTIR) loads automatically
 3. To use your own data, uncomment the upload cells in Section 3
 
