@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "",
+    "text": "Launch the Notebook in Google Colab"
+  },
+  {
+    "objectID": "index.html#about-this-notebook",
+    "href": "index.html#about-this-notebook",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "About This Notebook",
+    "text": "About This Notebook\nThis interactive notebook provides a complete chemometric analysis pipeline for spectroscopic data used in food fraud detection. It is designed for postgraduate students on the FBMFOR module to analyse NMR and FTIR data from their laboratory practicals.\nThe notebook runs entirely in Google Colab — no installation required. Simply click the badge above."
+  },
+  {
+    "objectID": "index.html#what-you-can-do",
+    "href": "index.html#what-you-can-do",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "What You Can Do",
+    "text": "What You Can Do\n\nUnsupervised Methods\n\nPrincipal Component Analysis (PCA)\n\nExplore the natural structure of your spectral data. PCA reveals groupings, outliers, and the spectral regions driving variation — all without using class labels. The notebook provides interactive scores plots with 95% confidence ellipses, loadings plots, scree plots, and Hotelling’s T² outlier detection.\n\nHierarchical Cluster Analysis (HCA)\n\nVisualise sample similarity as a dendrogram. Choose from different distance metrics and linkage methods to assess how well your samples cluster by class.\n\n\n\n\nSupervised Methods\n\nPLS-DA (Partial Least Squares Discriminant Analysis)\n\nClassify samples using their spectral fingerprints. The notebook automatically optimises the number of latent variables via cross-validation and reports confusion matrices, classification accuracy, and VIP scores to identify the most discriminating spectral regions.\n\nOPLS-DA (Orthogonal PLS-DA)\n\nSeparate predictive variation from orthogonal (irrelevant) variation for cleaner class separation. Includes S-plots for biomarker identification and permutation testing for model validation.\n\n\n\n\nPreprocessing\nAll standard spectral preprocessing methods are available with adjustable parameters:\n\n\n\n\n\n\n\n\nMethod\nPurpose\nTypical Use\n\n\n\n\nALS baseline correction\nRemove baseline drift\nFTIR\n\n\nSNV normalisation\nRemove scatter effects\nFTIR, NIR\n\n\nArea normalisation\nEqualise total intensity\nNMR\n\n\nMin-max scaling\nScale to [0, 1]\nGeneral\n\n\nSavitzky-Golay derivatives\nResolve overlapping peaks, remove baseline\nFTIR, NIR"
+  },
+  {
+    "objectID": "index.html#data-format",
+    "href": "index.html#data-format",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "Data Format",
+    "text": "Data Format\nThe notebook accepts CSV files with a simple structure:\nSpectral data — one row per sample, one column per spectral variable (wavenumber or chemical shift). The first column must be Sample_ID.\nMetadata — a lookup table mapping Sample_ID to Class labels (e.g., “EVOO”, “Adulterated”).\nA demo dataset (simulated olive oil FTIR with three classes: EVOO, Refined, Adulterated) is built into the notebook so you can explore the full pipeline immediately."
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "How to Use",
+    "text": "How to Use\n\nOpen the notebook by clicking the Colab badge at the top of this page\nRun Section 1 (Setup) to load all required libraries\nRun Section 2 (Demo Dataset) to generate the example data, or go to Section 3 to upload your own CSV files\nWork through each section sequentially — modify the clearly labelled parameter blocks (e.g., NORMALISATION = \"snv\", PC_X = 1) and re-run the cell to see the effect\nExport results (Section 10) to download PCA scores, loadings, and VIP scores as CSV files for your report"
+  },
+  {
+    "objectID": "index.html#tips-for-your-report",
+    "href": "index.html#tips-for-your-report",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "Tips for Your Report",
+    "text": "Tips for Your Report\n\nAlways show preprocessing — include before/after spectra plots and justify your choices\nPCA is exploratory — report the explained variance and describe what you see in the scores plot, but remember it does not use class information\nCross-validate supervised models — never report calibration accuracy alone; always use the cross-validated results\nVIP scores and S-plots — use these to link your statistical results back to specific chemical features (e.g., particular absorption bands)\nPermutation testing — a p-value &lt; 0.05 confirms your OPLS-DA model is detecting genuine class differences, not overfitting"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "References",
+    "text": "References\n\nJolliffe, I.T. (2002). Principal Component Analysis, 2nd ed. Springer.\nBarker, M. & Rayens, W. (2003). Partial least squares for discrimination. J. Chemometrics, 17(3), 166–173.\nTrygg, J. & Wold, S. (2002). Orthogonal projections to latent structures (O-PLS). J. Chemometrics, 16(3), 119–128.\nWiklund, S. et al. (2008). Visualization of GC/TOF-MS-based metabolomics data using OPLS class models. Anal. Chem., 80(1), 115–122.\nEilers, P.H.C. & Boelens, H.F.M. (2005). Baseline correction with asymmetric least squares smoothing.\nBarnes, R.J., Dhanoa, M.S. & Lister, S.J. (1989). Standard normal variate transformation. Appl. Spectrosc., 43(5), 772–777."
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Chemometric Analysis for Food Fraud Detection",
+    "section": "Contact",
+    "text": "Contact\nFor questions about this notebook or the FBMFOR module:\nGunter Kuhnle — g.g.kuhnle@reading.ac.uk Department of Food and Nutritional Sciences, University of Reading"
+  }
+]
