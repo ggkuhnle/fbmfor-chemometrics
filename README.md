@@ -1,7 +1,7 @@
 # FBMFOR — Chemometric Analysis for Food Fraud Detection
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOURUSERNAME/FBMFOR-chemometrics/blob/main/FBMFOR_Chemometrics_Analysis.ipynb)
-[![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://YOURUSERNAME.github.io/FBMFOR-chemometrics/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ggkuhnle/FBMFOR-chemometrics/blob/main/FBMFOR_Chemometrics_Analysis.ipynb)
+[![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ggkuhnle.github.io/FBMFOR-chemometrics/)
 
 Interactive chemometric analysis notebook for the **MSc Food Technology and Quality Assurance** module on food fraud analysis at the University of Reading.
 
