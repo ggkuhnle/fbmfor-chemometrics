@@ -1,93 +1,194 @@
 ---
-title: "Chemometric Analysis for Food Fraud Detection"
-subtitle: "FBMFOR — MSc Food Technology and Quality Assurance"
-author: "Department of Food and Nutritional Sciences, University of Reading"
-date: last-modified
+title: FB2NEP — Nutritional Epidemiology
+format:
+  html:
+    toc: false
+    number-sections: false
 ---
 
-```{=html}
-<div class="colab-banner">
-  <a href="https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank" class="colab-button">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="28">
-    &nbsp; Launch the Notebook in Google Colab
-  </a>
-</div>
-```
+## Practical workbooks
 
-## About This Notebook
+This page links to the **FB2NEP practical workbooks**.  
+Each notebook can be opened in two ways — choose whichever works best for you:
 
-This interactive notebook provides a complete chemometric analysis pipeline for spectroscopic data used in food fraud detection. It is designed for postgraduate students on the FBMFOR module to analyse NMR and FTIR data from their laboratory practicals.
+- **Google Colab** — requires a Google account, but offers a reliable environment with easy file saving to Google Drive.
+- **Binder** — no account required; opens directly in your browser. May take a minute to start up.
 
-The notebook runs entirely in **Google Colab** — no installation required. Simply click the badge above.
+You may also download the notebooks and run them locally in Jupyter.
 
-## What You Can Do
+---
 
-### Unsupervised Methods
+## How-To and sandbox (optional, but recommended)
 
-**Principal Component Analysis (PCA)**
-: Explore the natural structure of your spectral data. PCA reveals groupings, outliers, and the spectral regions driving variation — all without using class labels. The notebook provides interactive scores plots with 95% confidence ellipses, loadings plots, scree plots, and Hotelling's T² outlier detection.
+If you have not used Python or Google Colab before, start with the **How-To & Sandbox** materials.  
+They show you how to open notebooks, run code safely, and try things out without breaking anything.
 
-**Hierarchical Cluster Analysis (HCA)**
-: Visualise sample similarity as a dendrogram. Choose from different distance metrics and linkage methods to assess how well your samples cluster by class.
+- [FB2NEP — How-To & Sandbox (Colab/Jupyter)](howto_sandbox/)
 
-### Supervised Methods
 
-**PLS-DA (Partial Least Squares Discriminant Analysis)**
-: Classify samples using their spectral fingerprints. The notebook automatically optimises the number of latent variables via cross-validation and reports confusion matrices, classification accuracy, and VIP scores to identify the most discriminating spectral regions.
+## Part 1 - Nutritional Epidemiology
 
-**OPLS-DA (Orthogonal PLS-DA)**
-: Separate predictive variation from orthogonal (irrelevant) variation for cleaner class separation. Includes S-plots for biomarker identification and permutation testing for model validation.
+---
 
-### Preprocessing
+### 1.03 - Introduction to Jupyter and Google Colab
 
-All standard spectral preprocessing methods are available with adjustable parameters:
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.03_introduction_colab_jupyter.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.03 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.03_introduction_colab_jupyter.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
 
-| Method | Purpose | Typical Use |
-|--------|---------|-------------|
-| ALS baseline correction | Remove baseline drift | FTIR |
-| SNV normalisation | Remove scatter effects | FTIR, NIR |
-| Area normalisation | Equalise total intensity | NMR |
-| Min-max scaling | Scale to [0, 1] | General |
-| Savitzky-Golay derivatives | Resolve overlapping peaks, remove baseline | FTIR, NIR |
+---
 
-## Data Format
+### 1.04 - Data collection and cleaning
 
-The notebook accepts **CSV files** with a simple structure:
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.04_data_collection_cleaning.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.04 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.04_data_collection_cleaning.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
 
-**Spectral data** — one row per sample, one column per spectral variable (wavenumber or chemical shift). The first column must be `Sample_ID`.
+---
 
-**Metadata** — a lookup table mapping `Sample_ID` to `Class` labels (e.g., "EVOO", "Adulterated").
+### 1.05 - Representativeness and sampling
 
-A **demo dataset** (simulated olive oil FTIR with three classes: EVOO, Refined, Adulterated) is built into the notebook so you can explore the full pipeline immediately.
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.05_representative.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.05 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.05_representative.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
 
-## How to Use
+---
 
-1. **Open the notebook** by clicking the Colab badge at the top of this page
-2. **Run Section 1** (Setup) to load all required libraries
-3. **Run Section 2** (Demo Dataset) to generate the example data, *or* go to Section 3 to upload your own CSV files
-4. **Work through each section** sequentially — modify the clearly labelled parameter blocks (e.g., `NORMALISATION = "snv"`, `PC_X = 1`) and re-run the cell to see the effect
-5. **Export results** (Section 10) to download PCA scores, loadings, and VIP scores as CSV files for your report
+### 1.06 - Data exploration and "Table 1"
 
-## Tips for Your Report
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.06_data_exploration.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.06 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.06_data_exploration.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
 
-- **Always show preprocessing** — include before/after spectra plots and justify your choices
-- **PCA is exploratory** — report the explained variance and describe what you see in the scores plot, but remember it does not use class information
-- **Cross-validate supervised models** — never report calibration accuracy alone; always use the cross-validated results
-- **VIP scores and S-plots** — use these to link your statistical results back to specific chemical features (e.g., particular absorption bands)
-- **Permutation testing** — a p-value < 0.05 confirms your OPLS-DA model is detecting genuine class differences, not overfitting
+---
 
-## References
+### 1.07 - Data transformation
 
-- Jolliffe, I.T. (2002). *Principal Component Analysis*, 2nd ed. Springer.
-- Barker, M. & Rayens, W. (2003). Partial least squares for discrimination. *J. Chemometrics*, 17(3), 166–173.
-- Trygg, J. & Wold, S. (2002). Orthogonal projections to latent structures (O-PLS). *J. Chemometrics*, 16(3), 119–128.
-- Wiklund, S. et al. (2008). Visualization of GC/TOF-MS-based metabolomics data using OPLS class models. *Anal. Chem.*, 80(1), 115–122.
-- Eilers, P.H.C. & Boelens, H.F.M. (2005). Baseline correction with asymmetric least squares smoothing.
-- Barnes, R.J., Dhanoa, M.S. & Lister, S.J. (1989). Standard normal variate transformation. *Appl. Spectrosc.*, 43(5), 772–777.
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.07_data_transformation.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.07 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.07_data_transformation.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
 
-## Contact
+---
 
-For questions about this notebook or the FBMFOR module:
+### 1.08 - Regression and modelling (Part 1)
 
-**Gunter Kuhnle** — g.g.kuhnle@reading.ac.uk
-Department of Food and Nutritional Sciences, University of Reading
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.08_regression_modelling_01.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.08 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.08_regression_modelling_01.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+### 1.09 - Regression and modelling (Part 2)
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.09_regression_modelling_02.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.09 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.09_regression_modelling_02.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+### 1.10 - Missing data and sensitivity analysis
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/1.10_missing_data_and_sensitivity.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 1.10 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/1.10_missing_data_and_sensitivity.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+## Part 2 - Public Health Nutrition: Policy and Evaluation
+
+The following workbooks focus on quantitative methods for evaluating public health nutrition policies.
+
+---
+
+### 2.02 - DALYs and QALYs
+
+Quantifying population health burden using Disability-Adjusted Life Years and Quality-Adjusted Life Years. Includes an interactive exercise where you set your own disability weights and compare to GBD values.
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/2.02_qaly.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 2.02 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/2.02_qaly.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+### 2.03 - Health inequalities
+
+Measuring the social gradient in health using the Slope Index of Inequality (SII), Relative Index of Inequality (RII), and concentration curves. Applied to dietary intake and nutrition-related outcomes.
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/2.03_health_inequalities.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 2.03 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/2.03_health_inequalities.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+### 2.04 - Case study: Salt reduction (with objective measures)
+
+Evaluating the UK salt reduction programme using 24-hour urinary sodium — a model example of policy evaluation with an objective biomarker. Includes health impact modelling and sensitivity analysis.
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/2.04_salt_reduction.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 2.04 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/2.04_salt_reduction.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+### 2.05 - Case study: Sugar reduction (without objective measures)
+
+Evaluating the Soft Drinks Industry Levy (SDIL) without a biomarker — exploring the evidence hierarchy from product reformulation to health outcomes. Addresses the counterfactual problem in policy evaluation.
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/2.05_sugar_reduction.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 2.05 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/2.05_sugar_reduction.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+### 2.06 - Policy simulation and resource allocation
+
+Interactive budget allocation game: distribute £50M across public health nutrition interventions. Explore trade-offs between efficiency and equity, the impact of diminishing returns, and uncertainty in cost-effectiveness estimates.
+
+<a href="https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/notebooks/2.06_policy_simulation.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open 2.06 in Colab">
+</a>
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=notebooks/2.06_policy_simulation.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+</a>
+
+---
+
+## Assessment
+
+Please find assessment details [here](assessment/index.qmd)
