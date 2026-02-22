@@ -1,141 +1,99 @@
 ---
-title: "FB2NEP — How‑To & Sandbox (Colab/Jupyter)"
-format:
-  html:
-    toc: true
-    theme: default
-page-layout: article
-author: "Gunter Kuhnle"
-lang: en-GB
-date: today
-date-format: "D MMMM YYYY"
+title: "Chemometric Analysis for Food Fraud Detection"
+subtitle: "FBMFOR — MSc Food Technology and Quality Assurance"
+author: "Department of Food and Nutritional Sciences, University of Reading"
+date: last-modified
 ---
 
+```{=html}
+<div class="colab-banner">
+  <a href="https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank" class="colab-button">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="28">
+    &nbsp; Launch the Notebook in Google Colab
+  </a>
+</div>
+<div class="colab-banner">
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fbmfor-chemometrics/main?filepath=notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)" height="28">
+  &nbsp; Launch the Notebook in Binder (no login required)
+</a>
+</div>
+```
 
+## About This Notebook
 
-> This page shows you how to open and use the module notebooks in **Google Colab** or in **Binder** (or locally in Jupyter). It includes direct links and easy to understand guidance. If you have never used Python before, you are in the right place.
+This interactive notebook provides a complete chemometric analysis pipeline for spectroscopic data used in food fraud detection. It is designed for postgraduate students on the FBMFOR module to analyse NMR and FTIR data from their laboratory practicals.
 
-## Quick links
+The notebook runs entirely in **Google Colab** — no installation required. Simply click the badge above.
 
-**Open the notebooks directly in Colab or Binder:**
+## What You Can Do
 
-- **Introduction Notebook**  
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/howto_sandbox/Introduction-Notebook.ipynb) [![Open in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=howto_sandbox/Introduction-Notebook.ipynb) · [View on GitHub](https://github.com/ggkuhnle/fb2nep-epi/blob/main/howto_sandbox/Introduction-Notebook.ipynb)
+### Unsupervised Methods
 
-- **Playground (Sandbox)**  
-  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ggkuhnle/fb2nep-epi/blob/main/howto_sandbox/Playground.ipynb) [![Open in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ggkuhnle/fb2nep-epi/main?filepath=howto_sandbox/Playground.ipynb) · [View on GitHub](https://github.com/ggkuhnle/fb2nep-epi/blob/main/howto_sandbox/Playground.ipynb)
+**Principal Component Analysis (PCA)**
+: Explore the natural structure of your spectral data. PCA reveals groupings, outliers, and the spectral regions driving variation — all without using class labels. The notebook provides interactive scores plots with 95% confidence ellipses, loadings plots, scree plots, and Hotelling's T² outlier detection.
 
-**Printable cheat‑sheet:**  
-- [python‑cheatsheet.md](python-cheatsheet.md) (open “Raw”, then save/print)
+**Hierarchical Cluster Analysis (HCA)**
+: Visualise sample similarity as a dendrogram. Choose from different distance metrics and linkage methods to assess how well your samples cluster by class.
 
-> If you **fork** or use a different repository, update the links by replacing `ggkuhnle/fb2nep-epi` with your repo slug.
+### Supervised Methods
 
-<details>
-<summary><strong>What does “fork” mean on GitHub?</strong></summary>
+**PLS-DA (Partial Least Squares Discriminant Analysis)**
+: Classify samples using their spectral fingerprints. The notebook automatically optimises the number of latent variables via cross-validation and reports confusion matrices, classification accuracy, and VIP scores to identify the most discriminating spectral regions.
 
-A **fork** is **your own copy** of someone else’s GitHub repository under **your GitHub account**.  
-You can change it freely **without affecting the original**. Your fork can still receive updates from the original (“upstream”).
+**OPLS-DA (Orthogonal PLS-DA)**
+: Separate predictive variation from orthogonal (irrelevant) variation for cleaner class separation. Includes S-plots for biomarker identification and permutation testing for model validation.
 
-**Why fork?**
-- You want your **own version** of the materials.
-- You don’t have write permission on the original repo.
-- You plan to customise and maybe propose changes back later (via pull requests).
+### Preprocessing
 
-**How to fork (GitHub web):**
-1. Open the original repo (e.g. `https://github.com/ggkuhnle/fb2nep-epi`).
-2. Click **Fork** (top-right) → choose your account → **Create fork**.
-3. You now have `https://github.com/<YOUR-USER>/<YOUR-REPO>`.
+All standard spectral preprocessing methods are available with adjustable parameters:
 
-**Update links after forking**
-Replace the `owner/repo` part with your fork’s **repo slug**:
-- GitHub view:  
-  `https://github.com/<YOUR-USER>/<YOUR-REPO>/blob/main/path/to/notebook.ipynb`
-- Colab badge:  
-  `https://colab.research.google.com/github/<YOUR-USER>/<YOUR-REPO>/blob/main/path/to/notebook.ipynb`
+| Method | Purpose | Typical Use |
+|--------|---------|-------------|
+| ALS baseline correction | Remove baseline drift | FTIR |
+| SNV normalisation | Remove scatter effects | FTIR, NIR |
+| Area normalisation | Equalise total intensity | NMR |
+| Min-max scaling | Scale to [0, 1] | General |
+| Savitzky-Golay derivatives | Resolve overlapping peaks, remove baseline | FTIR, NIR |
 
-**Fork vs. clone vs. branch (quick)**
-- **Fork:** makes **your own repo** on GitHub.
-- **Clone:** makes a **local copy** on your computer.
-- **Branch:** a **line of development** inside one repo (yours or the original).
+## Data Format
 
-**Keeping your fork up-to-date**
-- On GitHub: open your fork and click **Sync fork** / **Fetch upstream**.
-- With Git (advanced):  
-  ```bash
-  git remote add upstream https://github.com/ggkuhnle/fb2nep-epi.git
-  git fetch upstream
-  git checkout main
-  git merge upstream/main
-  git push
-</details>
+The notebook accepts **CSV files** with a simple structure:
 
----
+**Spectral data** — one row per sample, one column per spectral variable (wavenumber or chemical shift). The first column must be `Sample_ID`.
 
-## How to open a notebook in Colab (step‑by‑step)
+**Metadata** — a lookup table mapping `Sample_ID` to `Class` labels (e.g., "EVOO", "Adulterated").
 
-> What is **Colab**? Colab is a hosted Jupyter Notebook service that requires no setup to use and provides free access to computing resources, including GPUs and TPUs. Colab is especially well suited to machine learning, data science, and education. **Requires a Google account.**
+A **demo dataset** (simulated olive oil FTIR with three classes: EVOO, Refined, Adulterated) is built into the notebook so you can explore the full pipeline immediately.
 
-> Right-clicking will open **Colab** in a new browser window.
+## How to Use
 
-1. Click an **Open in Colab** button above. Colab will load the notebook from GitHub. 
-2. At the top‑right, click **Connect** if it isn’t already connected. This starts a fresh, temporary Python session (a “runtime”).  
-3. You may see a warning like **“This notebook was not authored by Google.”**  
-   - Click **Run anyway**. Our notebooks are plain text and safe to run.  
-4. You might also see **“Warning: This notebook requires permissions to run.”**  
-   - Click **Run anyway**. Colab sandboxes code; nothing runs on your computer.  
-5. To **run a cell**, click the small ▶ button on its left, or press **Shift + Enter**.  
-6. To **run every cell from top to bottom**, go to **Runtime → Run all**.  
-7. To **save your own editable copy**, go to **File → Save a copy in Drive**. You now have a personal copy you can edit freely.
+1. **Open the notebook** by clicking the Colab badge at the top of this page
+2. **Run Section 1** (Setup) to load all required libraries
+3. **Run Section 2** (Demo Dataset) to generate the example data, *or* go to Section 3 to upload your own CSV files
+4. **Work through each section** sequentially — modify the clearly labelled parameter blocks (e.g., `NORMALISATION = "snv"`, `PC_X = 1`) and re-run the cell to see the effect
+5. **Export results** (Section 10) to download PCA scores, loadings, and VIP scores as CSV files for your report
 
-### Useful Colab options
-- **Runtime → Restart runtime** resets the session if things get stuck.  
-- **Runtime → Change runtime type** (we use Python 3; **no GPU needed**).  
-- **File → Download** lets you save the executed notebook as `.ipynb` or PDF.
+## Tips for Your Report
 
----
+- **Always show preprocessing** — include before/after spectra plots and justify your choices
+- **PCA is exploratory** — report the explained variance and describe what you see in the scores plot, but remember it does not use class information
+- **Cross-validate supervised models** — never report calibration accuracy alone; always use the cross-validated results
+- **VIP scores and S-plots** — use these to link your statistical results back to specific chemical features (e.g., particular absorption bands)
+- **Permutation testing** — a p-value < 0.05 confirms your OPLS-DA model is detecting genuine class differences, not overfitting
 
+## References
 
-## How to open a notebook in Binder (step‑by‑step)
+- Jolliffe, I.T. (2002). *Principal Component Analysis*, 2nd ed. Springer.
+- Barker, M. & Rayens, W. (2003). Partial least squares for discrimination. *J. Chemometrics*, 17(3), 166–173.
+- Trygg, J. & Wold, S. (2002). Orthogonal projections to latent structures (O-PLS). *J. Chemometrics*, 16(3), 119–128.
+- Wiklund, S. et al. (2008). Visualization of GC/TOF-MS-based metabolomics data using OPLS class models. *Anal. Chem.*, 80(1), 115–122.
+- Eilers, P.H.C. & Boelens, H.F.M. (2005). Baseline correction with asymmetric least squares smoothing.
+- Barnes, R.J., Dhanoa, M.S. & Lister, S.J. (1989). Standard normal variate transformation. *Appl. Spectrosc.*, 43(5), 772–777.
 
-> What is **Binder**? Binder turns a GitHub repository into a live, interactive Jupyter environment running in your browser. **No account or login required** — just click and go.
+## Contact
 
-> Note: Binder may take **1–2 minutes** to start the first time, as it builds the environment. Your work is not saved between sessions — download your notebook if you want to keep it.
+For questions about this notebook or the FBMFOR module:
 
-1. Click an **Open in Binder** badge above. A new tab will open and Binder will begin building the environment.
-2. Wait for the progress bar to complete. You will see log messages scrolling — this is normal.
-3. Once loaded, the notebook will open automatically in Jupyter.
-4. To **run a cell**, click it and press **Shift + Enter**, or use the ▶ button in the toolbar.
-5. To **run all cells**, go to **Cell → Run All** in the menu.
-6. To **save your work**, go to **File → Download as → Notebook (.ipynb)** before closing. Binder sessions are temporary and do not persist.
-
-### Useful Binder notes
-- **Session timeout:** Binder sessions close after ~10 minutes of inactivity. Save your work regularly.
-- **No GPU needed** for these notebooks — the default Binder environment is fine.
-- **Slow start?** This is normal on first launch. Once running, the notebook behaves identically to any other Jupyter environment.
-
----
-
-## Working locally in Jupyter (optional)
-If you prefer local execution:
-1. Install **Anaconda** or **Miniconda**, then open **Jupyter Lab**.  
-2. Download the `.ipynb` files from GitHub and open them in Jupyter Lab.  
-3. Run cells with **Shift + Enter** as in Colab.
-
----
-
-## Troubleshooting
-
-- **ModuleNotFoundError** (e.g. `statsmodels`): in Colab, run the cell that starts with `!pip install ...`, then **Runtime → Restart runtime**, and re‑run the code. In Binder, all packages are pre-installed — if a module is missing, try **Kernel → Restart**.  
-- **Kernel crashed / out of memory**: restart the runtime. Don’t open huge datasets in this sandbox.  
-- **Long‑running cells**: click the stop icon (■) next to the cell number, or **Runtime → Interrupt execution** (Colab) / **Kernel → Interrupt** (Binder).
-- **Binder won't load**: try refreshing the page. If it continues to fail, use Colab as a fallback.
-
----
-
-## What you will learn here
-
-- How to run Python cells safely in the cloud (Colab or Binder).  
-- How to make small edits and immediately see their effect.  
-- How to generate simple synthetic data and make basic plots & analyses you’ll reuse in FB2NEP.
-
-Now jump into the **Introduction Notebook** first, then play in the **Playground**.
+**Gunter Kuhnle** — g.g.kuhnle@reading.ac.uk
+Department of Food and Nutritional Sciences, University of Reading
