@@ -13,8 +13,9 @@ date: last-modified
   </a>
 </div>
 <div class="colab-banner">
-<a href="https://mybinder.org/v2/gh/ggkuhnle/fbmfor-chemometrics/main?filepath=notebooks/fbmfor_chemometrics_analysis.ipynb.ipynb" target="_blank">
-  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)">
+<a href="https://mybinder.org/v2/gh/ggkuhnle/fbmfor-chemometrics/main?filepath=notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)" height="28">
+  &nbsp; Launch the Notebook in Binder (no login required)
 </a>
 </div>
 ```
