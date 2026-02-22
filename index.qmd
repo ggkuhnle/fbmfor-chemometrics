@@ -6,17 +6,15 @@ date: last-modified
 ---
 
 ```{=html}
-<div class="colab-banner">
-  <a href="https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank" class="colab-button">
-    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="28">
-    &nbsp; Launch the Notebook in Google Colab
+<div class="launch-buttons">
+  <a href="https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank" class="btn-colab">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+    Google Colab
   </a>
-</div>
-<div class="colab-banner">
-<a href="https://mybinder.org/v2/gh/ggkuhnle/fbmfor-chemometrics/main?filepath=notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank">
-  <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder (no login required)" height="28">
-  &nbsp; Launch the Notebook in Binder (no login required)
-</a>
+  <a href="https://mybinder.org/v2/gh/ggkuhnle/fbmfor-chemometrics/main?filepath=notebooks/fbmfor_chemometrics_analysis.ipynb" target="_blank" class="btn-binder">
+    <img src="https://mybinder.org/badge_logo.svg" alt="Open in Binder">
+    Binder (no login required)
+  </a>
 </div>
 ```
 
