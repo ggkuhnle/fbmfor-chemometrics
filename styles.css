@@ -1,33 +1,55 @@
 /* FBMFOR Chemometrics Site Styles */
 
-/* Colab launch banner */
-.colab-banner {
-  background: linear-gradient(135deg, #003366 0%, #336699 100%);
-  border-radius: 8px;
-  padding: 1.2rem 1.5rem;
+/* ---- Launch buttons ---- */
+.launch-buttons {
+  background: linear-gradient(135deg, #003366 0%, #1a5276 100%);
+  border-radius: 10px;
+  padding: 1.4rem 1.8rem;
   margin: 1.5rem 0 2rem 0;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.colab-button {
+.launch-buttons a {
   display: inline-flex;
   align-items: center;
-  color: #ffffff !important;
-  font-size: 1.1rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none !important;
-  transition: opacity 0.2s;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
-.colab-button:hover {
-  opacity: 0.85;
+.launch-buttons a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.colab-button img {
-  margin-right: 0.3rem;
+.launch-buttons a img {
+  height: 24px;
+  margin-right: 0.5rem;
 }
 
-/* Definition list styling */
+.launch-buttons .btn-colab {
+  background: #F9AB00;
+  color: #1a1a1a !important;
+}
+
+.launch-buttons .btn-binder {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.launch-buttons .btn-binder:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ---- Definition list styling ---- */
 dt {
   font-weight: 600;
   color: #003366;
@@ -41,12 +63,12 @@ dd {
   border-left: 3px solid #e0e0e0;
 }
 
-/* Table styling */
+/* ---- Table styling ---- */
 table {
   font-size: 0.92rem;
 }
 
-/* Heading colours */
+/* ---- Heading colours ---- */
 h2 {
   color: #003366;
   border-bottom: 2px solid #003366;
@@ -57,7 +79,7 @@ h3 {
   color: #336699;
 }
 
-/* Code blocks */
+/* ---- Code blocks ---- */
 code {
   font-size: 0.88rem;
 }
