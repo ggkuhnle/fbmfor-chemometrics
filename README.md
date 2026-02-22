@@ -2,6 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ggkuhnle/fbmfor-chemometrics/blob/main/notebooks/FBMFOR_Chemometrics_Analysis.ipynb)
 [![GitHub Pages](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://ggkuhnle.github.io/fbmfor-chemometrics/)
+[![OpenIn Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ggkuhnle/fbmfor-chemometrics/main?filepath=notebooks/fbmfor_chemometrics_analysis.ipynb.ipynb")
 
 Interactive chemometric analysis notebook for the **MSc Food Technology and Quality Assurance** module on food fraud analysis at the University of Reading.
 
